@@ -20,7 +20,7 @@ Gra polega na odpowiadaniu na pytania, których wynikiem jest zawsze liczba.
 2. Pobierz repozytorium i uruchom serwer:
 
 ```
-git clone [https://github.com/TwojaNazwa/ryzyk-fizyk.git](https://github.com/TwojaNazwa/ryzyk-fizyk.git)
+git clone https://github.com/Stobini/QuizVegas.git
 cd ryzyk-fizyk
 npm install
 node server.js
