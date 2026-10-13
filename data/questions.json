@@ -4,7 +4,7 @@
     "answer": 1912
   },
   {
-    "text": "Ile minut trwa pełny obrót Ziemi wokół własnej osi (dokładnie)?",
+    "text": "Ile minut trwa jeden obrót Ziemi wokół własnej osi względem gwiazd?",
     "answer": 1436
   },
   {
@@ -40,7 +40,7 @@
     "answer": 1969
   },
   {
-    "text": "Ile wynosi rekord prędkości samochodu seryjnego (Bugatti Chiron SS 300+, w km/h)?",
+    "text": "Jaką prędkość maksymalną (w km/h) osiągnął Bugatti Chiron Super Sport 300+?",
     "answer": 490
   },
   {
@@ -62,10 +62,6 @@
   {
     "text": "W którym roku upadł Mur Berliński?",
     "answer": 1989
-  },
-  {
-    "text": "Ile wynosi rekord świata w biegu na 100m mężczyzn pomnożony przez 100 (9.58s -> 958)?",
-    "answer": 958
   },
   {
     "text": "Ile zębów ma dorosły pies?",
@@ -100,16 +96,8 @@
     "answer": 1977
   },
   {
-    "text": "Ile minut (średnio) śpi żyrafa na dobę?",
-    "answer": 30
-  },
-  {
     "text": "W którym roku odbyła się premiera gry Wiedźmin 3?",
     "answer": 2015
-  },
-  {
-    "text": "Ile lat żyją średnio żółwie słoniowe?",
-    "answer": 100
   },
   {
     "text": "Ile lat trwała Wojna Stuletnia?",
@@ -120,24 +108,20 @@
     "answer": 1879
   },
   {
-    "text": "Ile mięśni trzeba użyć, żeby zrobić krok (średnio)?",
-    "answer": 200
-  },
-  {
     "text": "W którym roku Facebook stał się dostępny dla wszystkich użytkowników sieci?",
     "answer": 2006
   },
   {
-    "text": "Ile wynosi temperatura powierzchni Słońca (w tysiącach stopni Celsjusza)?",
-    "answer": 5
+    "text": "Ile stopni Celsjusza ma powierzchnia Słońca (w przybliżeniu)?",
+    "answer": 5500
   },
   {
     "text": "W którym roku zmarł Michael Jackson?",
     "answer": 2009
   },
   {
-    "text": "Ile metrów ma najwyższy szczyt Ziemi (Mount Everest)?",
-    "answer": 8848
+    "text": "Ile metrów wysokości ma Mount Everest (pomiar z 2020 r., zaokrąglone do metra)?",
+    "answer": 8849
   },
   {
     "text": "Ile wynosi limit znaków w pierwszej wersji Twittera?",
@@ -148,27 +132,15 @@
     "answer": 1975
   },
   {
-    "text": "Ile lat ma najstarsze drzewo w Polsce (Cis w Henrykowie, przybliżenie)?",
-    "answer": 1270
-  },
-  {
     "text": "W którym roku odbyła się premiera 'Gwiezdnych Wojen: Nowa Nadzieja'?",
     "answer": 1977
-  },
-  {
-    "text": "Ile wynosi prawidłowa temperatura ciała człowieka w skali Fahrenheita?",
-    "answer": 98
   },
   {
     "text": "W którym roku wysłano pierwszą wiadomość w ARPANET (przodek internetu)?",
     "answer": 1969
   },
   {
-    "text": "Ile pięter ma Pałac Kultury i Nauki w Warszawie?",
-    "answer": 42
-  },
-  {
-    "text": "W którym roku Titanic (film) otrzymał 11 Oscarów?",
+    "text": "W którym roku odbyła się gala Oscarów, na której „Titanic” zdobył 11 statuetek?",
     "answer": 1998
   },
   {
@@ -204,7 +176,7 @@
     "answer": 1998
   },
   {
-    "text": "Ile tysięcy kilometrów wynosi obwód Ziemi na równiku?",
+    "text": "Ile tysięcy kilometrów wynosi obwód Ziemi na równiku (zaokrąglone do całości)?",
     "answer": 40
   },
   {
@@ -236,7 +208,7 @@
     "answer": 1948
   },
   {
-    "text": "Ile bilionów kilometrów ma rok świetlny (w przybliżeniu)?",
+    "text": "Ile bilionów kilometrów ma rok świetlny (zaokrąglone do całości)?",
     "answer": 9
   },
   {
@@ -258,10 +230,6 @@
   {
     "text": "W którym roku wynaleziono telefon (patent Bella)?",
     "answer": 1876
-  },
-  {
-    "text": "Ile razy mruga człowiek w ciągu minuty (średnio)?",
-    "answer": 15
   },
   {
     "text": "W którym roku Polska wstąpiła do NATO?",
@@ -296,14 +264,6 @@
     "answer": 40
   },
   {
-    "text": "W którym roku wynaleziono ruchomą czcionkę (Gutenberg, data przybliżona)?",
-    "answer": 1450
-  },
-  {
-    "text": "Ile wynosi IQ uznawane za próg geniuszu?",
-    "answer": 140
-  },
-  {
     "text": "W którym roku odbyła się premiera filmu 'Matrix'?",
     "answer": 1999
   },
@@ -314,10 +274,6 @@
   {
     "text": "W którym roku wybuchła Rewolucja Francuska?",
     "answer": 1789
-  },
-  {
-    "text": "Ile kalorii ma Big Mac (w Polsce, ok.)?",
-    "answer": 550
   },
   {
     "text": "W którym roku odkryto penicylinę?",
@@ -338,10 +294,6 @@
   {
     "text": "W którym roku wynaleziono WWW (World Wide Web)?",
     "answer": 1989
-  },
-  {
-    "text": "Ile waży dorosły samiec niedźwiedzia polarnego (średnio, w kg)?",
-    "answer": 450
   },
   {
     "text": "W którym roku wysłano pierwszego SMS-a?",
@@ -378,10 +330,6 @@
   {
     "text": "W którym roku urodził się Mikołaj Kopernik?",
     "answer": 1473
-  },
-  {
-    "text": "Ile wynosi maksymalna liczba punktów w Scrabble za słowo 'OXYPHENBUTAZONE' (teoretyczny rekord)?",
-    "answer": 1778
   },
   {
     "text": "W którym roku odbył się pierwszy finał WOŚP?",
@@ -440,18 +388,6 @@
     "answer": 603
   },
   {
-    "text": "Ile klocków LEGO wyprodukowano na każdego człowieka na Ziemi (średnio)?",
-    "answer": 80
-  },
-  {
-    "text": "Ile metrów wysokości ma Krzywa Wieża w Pizie?",
-    "answer": 55
-  },
-  {
-    "text": "Ile wynosi temperatura wewnątrz pizzy w piecu (w stopniach Celsjusza)?",
-    "answer": 350
-  },
-  {
     "text": "Ile zębów ma dorosły kot?",
     "answer": 30
   },
@@ -476,16 +412,8 @@
     "answer": 54
   },
   {
-    "text": "Ile wynosi średnia długość życia pszczoły robotnicy w sezonie letnim (w dniach)?",
-    "answer": 38
-  },
-  {
     "text": "Ile wynosi obwód piłki nożnej (w cm, norma FIFA)?",
     "answer": 69
-  },
-  {
-    "text": "Ile mięśni używasz, żeby się uśmiechnąć?",
-    "answer": 17
   },
   {
     "text": "Ile wynosi rekordowa liczba dzieci urodzona przez jedną kobietę (Walentyna Wasiljewa)?",
@@ -500,14 +428,6 @@
     "answer": 287
   },
   {
-    "text": "Ile wynosi prędkość lotu piłki golfowej po uderzeniu (rekord, w km/h)?",
-    "answer": 349
-  },
-  {
-    "text": "Ile wynosi liczba atomowa złota?",
-    "answer": 79
-  },
-  {
     "text": "Ile minut trwa doba na Jowiszu?",
     "answer": 595
   },
@@ -520,24 +440,12 @@
     "answer": 100
   },
   {
-    "text": "Ile kości ma rekin?",
-    "answer": 0
-  },
-  {
     "text": "Ile wynosi średnia waga ludzkiego mózgu (w gramach)?",
     "answer": 1350
   },
   {
-    "text": "Ile wynosi liczba kropek na standardowym zestawie domina?",
-    "answer": 168
-  },
-  {
     "text": "Ile wynosi odległość z Warszawy do Nowego Jorku (w linii prostej, w km)?",
     "answer": 6850
-  },
-  {
-    "text": "Ile wynosi liczba odcinków serialu 'Moda na Sukces' (stan na 2024, w tysiącach - wpisz liczbę tysięcy)?",
-    "answer": 9
   },
   {
     "text": "Ile wynosi przeciętna liczba włosów na głowie człowieka?",
@@ -564,11 +472,7 @@
     "answer": 28
   },
   {
-    "text": "Ile wynosi liczba liter w najdłuższym nazwisku w Polsce?",
-    "answer": 51
-  },
-  {
-    "text": "Ile wynosi waga sztabki złota w standardzie 'Good Delivery' (w kg)?",
+    "text": "Ile kilogramów waży sztabka złota „Good Delivery” (zaokrąglone do całości)?",
     "answer": 12
   },
   {
@@ -576,36 +480,12 @@
     "answer": 775
   },
   {
-    "text": "Ile wynosi liczba serc dżdżownicy?",
-    "answer": 5
-  },
-  {
     "text": "Ile wynosi liczba dni ciąży u kota?",
     "answer": 65
   },
   {
-    "text": "Ile wynosi liczba klocków w największym zestawie LEGO (Mapa Świata)?",
-    "answer": 11695
-  },
-  {
-    "text": "Ile wynosi liczba krzeseł w polskim Sejmie (sala plenarna)?",
+    "text": "Ilu posłów liczy polski Sejm?",
     "answer": 460
-  },
-  {
-    "text": "Ile wynosi liczba minut w roku (bez przestępnego)?",
-    "answer": 525600
-  },
-  {
-    "text": "Ile wynosi liczba zer w liczbie kwadrylion?",
-    "answer": 24
-  },
-  {
-    "text": "Ile wynosi liczba smaków, które rozróżnia język (podstawowych)?",
-    "answer": 5
-  },
-  {
-    "text": "Ile wynosi liczba gier wideo wydanych na PlayStation 2 (w tysiącach)?",
-    "answer": 4
   },
   {
     "text": "Ile wynosi liczba mostów w Wenecji?",
@@ -614,10 +494,6 @@
   {
     "text": "Ile wynosi liczba stacji metra w Londynie?",
     "answer": 272
-  },
-  {
-    "text": "Ile wynosi liczba zębów u ślimaka winniczka (na raduli)?",
-    "answer": 25000
   },
   {
     "text": "Ile wynosi liczba gwiazd na fladze Unii Europejskiej?",
@@ -644,14 +520,6 @@
     "answer": 1200
   },
   {
-    "text": "Ile wynosi liczba kilometrów, które pokonuje krew w ciele człowieka w ciągu doby?",
-    "answer": 19000
-  },
-  {
-    "text": "Ile wynosi liczba rzek w Polsce?",
-    "answer": 5000
-  },
-  {
     "text": "Ile wynosi liczba wysp w Japonii?",
     "answer": 6852
   },
@@ -668,10 +536,6 @@
     "answer": 10
   },
   {
-    "text": "Ile wynosi liczba zer w jednym bajcie?",
-    "answer": 0
-  },
-  {
     "text": "Ile wynosi liczba bitów w jednym bajcie?",
     "answer": 8
   },
@@ -680,7 +544,7 @@
     "answer": 12
   },
   {
-    "text": "Ile wynosi liczba Oscarów zdobyta przez Walta Disneya?",
+    "text": "Ile konkurencyjnych Oscarów zdobył Walt Disney?",
     "answer": 22
   },
   {
@@ -700,28 +564,12 @@
     "answer": 8
   },
   {
-    "text": "Ile wynosi liczba litrów pojemności baku w Fiacie 126p (Maluch)?",
-    "answer": 21
-  },
-  {
     "text": "Ile wynosi liczba lat, ile żyła najstarsza panda w niewoli?",
     "answer": 38
   },
   {
     "text": "Ile wynosi liczba minut trwania typowego cyklu snu?",
     "answer": 90
-  },
-  {
-    "text": "Ile wynosi liczba kostek cukru w szklance soku pomarańczowego (z kartonu)?",
-    "answer": 5
-  },
-  {
-    "text": "Ile wynosi liczba par odnóży u stonogi murowej?",
-    "answer": 15
-  },
-  {
-    "text": "Ile wynosi liczba lat świetlnych do Galaktyki Andromedy (w milionach)?",
-    "answer": 2
   },
   {
     "text": "Ile wynosi liczba minut, ile można przeżyć bez tlenu (rekord statyczny)?",
@@ -744,10 +592,6 @@
     "answer": 151
   },
   {
-    "text": "Ile wynosi liczba lat, ile żyje mucha domowa (średnio)?",
-    "answer": 28
-  },
-  {
     "text": "Ile wynosi liczba komór w sercu człowieka?",
     "answer": 4
   },
@@ -760,10 +604,6 @@
     "answer": 13
   },
   {
-    "text": "Ile wynosi liczba minut potrzebna na ugotowanie jajka na twardo?",
-    "answer": 9
-  },
-  {
     "text": "Ile wynosi liczba litrów paliwa, jakie spala Boeing 747 na sekundę?",
     "answer": 4
   },
@@ -772,16 +612,8 @@
     "answer": 4
   },
   {
-    "text": "Ile wynosi liczba dni, ile wytrzyma wielbłąd bez wody?",
-    "answer": 15
-  },
-  {
-    "text": "Ile wynosi liczba pięter w Pałacu Kultury?",
-    "answer": 42
-  },
-  {
-    "text": "Ile wynosi liczba lat, ile ma Myszka Miki (od debiutu 1928 do 2024)?",
-    "answer": 96
+    "text": "W którym roku zadebiutowała Myszka Miki?",
+    "answer": 1928
   },
   {
     "text": "Ile wynosi liczba graczy w siatkówce plażowej (w jednej drużynie)?",
@@ -796,10 +628,6 @@
     "answer": 12
   },
   {
-    "text": "Ile wynosi liczba rzędów siedzeń w typowym Boeingu 737?",
-    "answer": 30
-  },
-  {
     "text": "Ile wynosi liczba lat, ile trwa kadencja sędziego Trybunału Konstytucyjnego w Polsce?",
     "answer": 9
   },
@@ -808,7 +636,907 @@
     "answer": 45
   },
   {
-    "text": "Ile wynosi liczba lat, ile trwało budowanie Wielkiego Muru Chińskiego (łącznie, w setkach lat)?",
-    "answer": 20
+    "text": "W którym roku odbył się chrzest Polski?",
+    "answer": 966
+  },
+  {
+    "text": "W którym roku doszło do bitwy pod Grunwaldem?",
+    "answer": 1410
+  },
+  {
+    "text": "W którym roku uchwalono Konstytucję 3 maja?",
+    "answer": 1791
+  },
+  {
+    "text": "W którym roku wybuchła II wojna światowa?",
+    "answer": 1939
+  },
+  {
+    "text": "W którym roku zakończyła się II wojna światowa w Europie?",
+    "answer": 1945
+  },
+  {
+    "text": "W którym roku wybuchło Powstanie Warszawskie?",
+    "answer": 1944
+  },
+  {
+    "text": "W którym roku powstała „Solidarność”?",
+    "answer": 1980
+  },
+  {
+    "text": "W którym roku wprowadzono w Polsce stan wojenny?",
+    "answer": 1981
+  },
+  {
+    "text": "W którym roku Polska przystąpiła do Unii Europejskiej?",
+    "answer": 2004
+  },
+  {
+    "text": "W którym roku Polska odzyskała niepodległość po I wojnie światowej?",
+    "answer": 1918
+  },
+  {
+    "text": "W którym roku doszło do bitwy pod Hastings?",
+    "answer": 1066
+  },
+  {
+    "text": "W którym roku wybuchła Rewolucja Październikowa?",
+    "answer": 1917
+  },
+  {
+    "text": "W którym roku wybuchła I wojna światowa?",
+    "answer": 1914
+  },
+  {
+    "text": "W którym roku Japonia zaatakowała Pearl Harbor?",
+    "answer": 1941
+  },
+  {
+    "text": "W którym roku doszło do zamachów na World Trade Center?",
+    "answer": 2001
+  },
+  {
+    "text": "W którym roku doszło do bitwy pod Waterloo?",
+    "answer": 1815
+  },
+  {
+    "text": "W którym roku Jurij Gagarin poleciał w kosmos?",
+    "answer": 1961
+  },
+  {
+    "text": "W którym roku wystrzelono pierwszego sztucznego satelitę Sputnik 1?",
+    "answer": 1957
+  },
+  {
+    "text": "W którym roku rozpadł się Związek Radziecki?",
+    "answer": 1991
+  },
+  {
+    "text": "W którym roku wprowadzono euro w postaci gotówki?",
+    "answer": 2002
+  },
+  {
+    "text": "W którym roku odbyło się referendum w sprawie Brexitu?",
+    "answer": 2016
+  },
+  {
+    "text": "W którym roku koronował się Bolesław Chrobry?",
+    "answer": 1025
+  },
+  {
+    "text": "W którym roku zawarto Unię Lubelską?",
+    "answer": 1569
+  },
+  {
+    "text": "W którym roku miał miejsce pierwszy rozbiór Polski?",
+    "answer": 1772
+  },
+  {
+    "text": "W którym roku zmarł Jan Paweł II?",
+    "answer": 2005
+  },
+  {
+    "text": "W którym roku Mirosław Hermaszewski poleciał w kosmos?",
+    "answer": 1978
+  },
+  {
+    "text": "W którym roku Lech Wałęsa został prezydentem Polski?",
+    "answer": 1990
+  },
+  {
+    "text": "W którym roku przeprowadzono denominację złotego?",
+    "answer": 1995
+  },
+  {
+    "text": "W którym roku Luter ogłosił 95 tez?",
+    "answer": 1517
+  },
+  {
+    "text": "W którym roku urodził się William Szekspir?",
+    "answer": 1564
+  },
+  {
+    "text": "W którym roku zmarł William Szekspir?",
+    "answer": 1616
+  },
+  {
+    "text": "W którym roku ukazała się pierwsza część „Don Kichota”?",
+    "answer": 1605
+  },
+  {
+    "text": "W którym roku urodził się Fryderyk Chopin?",
+    "answer": 1810
+  },
+  {
+    "text": "W którym roku zmarł Fryderyk Chopin?",
+    "answer": 1849
+  },
+  {
+    "text": "W którym roku zmarł Wolfgang Amadeusz Mozart?",
+    "answer": 1791
+  },
+  {
+    "text": "W którym roku zmarł Ludwig van Beethoven?",
+    "answer": 1827
+  },
+  {
+    "text": "W którym roku Henryk Sienkiewicz otrzymał literackiego Nobla?",
+    "answer": 1905
+  },
+  {
+    "text": "W którym roku Maria Skłodowska-Curie otrzymała pierwszego Nobla?",
+    "answer": 1903
+  },
+  {
+    "text": "W którym roku Wisława Szymborska otrzymała literackiego Nobla?",
+    "answer": 1996
+  },
+  {
+    "text": "W którym roku Lech Wałęsa otrzymał Pokojowego Nobla?",
+    "answer": 1983
+  },
+  {
+    "text": "W którym roku opublikowano „Pana Tadeusza”?",
+    "answer": 1834
+  },
+  {
+    "text": "W którym roku ukazało się „Quo Vadis” Sienkiewicza w formie książkowej?",
+    "answer": 1896
+  },
+  {
+    "text": "W którym roku odbył się pierwszy Konkurs Piosenki Eurowizji?",
+    "answer": 1956
+  },
+  {
+    "text": "W którym roku odbył się pierwszy Tour de France?",
+    "answer": 1903
+  },
+  {
+    "text": "W którym roku rozpoczęła nadawanie Telewizja Polska?",
+    "answer": 1952
+  },
+  {
+    "text": "W którym roku Charles Lindbergh przeleciał samotnie nad Atlantykiem?",
+    "answer": 1927
+  },
+  {
+    "text": "W którym roku otwarto pierwszą linię londyńskiego metra?",
+    "answer": 1863
+  },
+  {
+    "text": "W którym roku wynaleziono Coca-Colę?",
+    "answer": 1886
+  },
+  {
+    "text": "W którym roku zadebiutowała lalka Barbie?",
+    "answer": 1959
+  },
+  {
+    "text": "W którym roku Ernő Rubik wynalazł swoją kostkę?",
+    "answer": 1974
+  },
+  {
+    "text": "W którym roku wprowadzono na rynek Monopoly?",
+    "answer": 1935
+  },
+  {
+    "text": "W którym roku opatentowano obecny klocek LEGO?",
+    "answer": 1958
+  },
+  {
+    "text": "W którym roku ukazała się pierwsza książka o Harrym Potterze?",
+    "answer": 1997
+  },
+  {
+    "text": "W którym roku odbyła się premiera pierwszego filmu o Harrym Potterze?",
+    "answer": 2001
+  },
+  {
+    "text": "W którym roku odbyła się premiera filmu „Titanic” Jamesa Camerona?",
+    "answer": 1997
+  },
+  {
+    "text": "W którym roku odbyła się premiera „Pulp Fiction”?",
+    "answer": 1994
+  },
+  {
+    "text": "W którym roku odbyła się premiera „Parku Jurajskiego”?",
+    "answer": 1993
+  },
+  {
+    "text": "W którym roku odbyła się premiera „Toy Story”?",
+    "answer": 1995
+  },
+  {
+    "text": "W którym roku odbyła się premiera „Szczęk”?",
+    "answer": 1975
+  },
+  {
+    "text": "W którym roku odbyła się premiera „Kevina samego w domu”?",
+    "answer": 1990
+  },
+  {
+    "text": "W którym roku odbyła się premiera „Incepcji”?",
+    "answer": 2010
+  },
+  {
+    "text": "W którym roku odbyła się premiera „Gladiatora”?",
+    "answer": 2000
+  },
+  {
+    "text": "W którym roku odbyła się premiera „Krainy lodu”?",
+    "answer": 2013
+  },
+  {
+    "text": "W którym roku wyemitowano pierwszy odcinek „Simpsonów” jako serialu?",
+    "answer": 1989
+  },
+  {
+    "text": "W którym roku zadebiutował „SpongeBob Kanciastoporty”?",
+    "answer": 1999
+  },
+  {
+    "text": "W którym roku założono Netflix?",
+    "answer": 1997
+  },
+  {
+    "text": "W którym roku założono Amazon?",
+    "answer": 1994
+  },
+  {
+    "text": "W którym roku założono Apple?",
+    "answer": 1976
+  },
+  {
+    "text": "W którym roku założono Facebooka?",
+    "answer": 2004
+  },
+  {
+    "text": "W którym roku założono Twittera?",
+    "answer": 2006
+  },
+  {
+    "text": "W którym roku uruchomiono Instagram?",
+    "answer": 2010
+  },
+  {
+    "text": "W którym roku powstała Wikipedia?",
+    "answer": 2001
+  },
+  {
+    "text": "W którym roku uruchomiono Spotify?",
+    "answer": 2006
+  },
+  {
+    "text": "W którym roku założono Teslę?",
+    "answer": 2003
+  },
+  {
+    "text": "W którym roku pojawił się system Windows 95?",
+    "answer": 1995
+  },
+  {
+    "text": "W którym roku w sprzedaży pojawiła się konsola PlayStation 2?",
+    "answer": 2000
+  },
+  {
+    "text": "W którym roku na rynek trafiła konsola Nintendo Switch?",
+    "answer": 2017
+  },
+  {
+    "text": "W którym roku ukazał się „Super Mario Bros.” na NES?",
+    "answer": 1985
+  },
+  {
+    "text": "W którym roku powstał Tetris?",
+    "answer": 1984
+  },
+  {
+    "text": "W którym roku na automatach pojawił się Pac-Man?",
+    "answer": 1980
+  },
+  {
+    "text": "W którym roku w Japonii ukazały się pierwsze gry z serii Pokémon?",
+    "answer": 1996
+  },
+  {
+    "text": "W którym roku zadebiutował pierwszy Macintosh?",
+    "answer": 1984
+  },
+  {
+    "text": "W którym roku Linus Torvalds opublikował pierwszą wersję Linuxa?",
+    "answer": 1991
+  },
+  {
+    "text": "W którym roku zadebiutował język programowania Java?",
+    "answer": 1995
+  },
+  {
+    "text": "W którym roku udostępniono publicznie ChatGPT?",
+    "answer": 2022
+  },
+  {
+    "text": "W którym roku ruszył Gmail?",
+    "answer": 2004
+  },
+  {
+    "text": "W którym roku powstał Skype?",
+    "answer": 2003
+  },
+  {
+    "text": "W którym roku wysłano pierwszy e-mail w sieci?",
+    "answer": 1971
+  },
+  {
+    "text": "W którym roku w sprzedaży pojawił się pierwszy telefon z Androidem?",
+    "answer": 2008
+  },
+  {
+    "text": "W którym roku wprowadzono na rynek telefon Nokia 3310?",
+    "answer": 2000
+  },
+  {
+    "text": "W którym roku zadebiutował pierwszy iPad?",
+    "answer": 2010
+  },
+  {
+    "text": "W którym roku wyniesiono na orbitę Teleskop Hubble’a?",
+    "answer": 1990
+  },
+  {
+    "text": "W którym roku wystrzelono sondę Voyager 1?",
+    "answer": 1977
+  },
+  {
+    "text": "W którym roku wystrzelono Kosmiczny Teleskop Jamesa Webba?",
+    "answer": 2021
+  },
+  {
+    "text": "W którym roku łazik Curiosity wylądował na Marsie?",
+    "answer": 2012
+  },
+  {
+    "text": "W którym roku Pluton przestał być uznawany za planetę?",
+    "answer": 2006
+  },
+  {
+    "text": "W którym roku doszło do katastrofy promu Challenger?",
+    "answer": 1986
+  },
+  {
+    "text": "W którym roku wystartowała misja Apollo 13?",
+    "answer": 1970
+  },
+  {
+    "text": "W którym roku powstał zespół Queen?",
+    "answer": 1970
+  },
+  {
+    "text": "W którym roku wydano utwór „Bohemian Rhapsody”?",
+    "answer": 1975
+  },
+  {
+    "text": "W którym roku ukazała się płyta „Thriller” Michaela Jacksona?",
+    "answer": 1982
+  },
+  {
+    "text": "W którym roku The Beatles wydali debiutancki album „Please Please Me”?",
+    "answer": 1963
+  },
+  {
+    "text": "W którym roku ABBA wygrała Eurowizję piosenką „Waterloo”?",
+    "answer": 1974
+  },
+  {
+    "text": "W którym roku Messi po raz pierwszy w karierze wygrał Mistrzostwa Świata w piłce nożnej?",
+    "answer": 2022
+  },
+  {
+    "text": "W którym roku odbyły się igrzyska olimpijskie w Atlancie?",
+    "answer": 1996
+  },
+  {
+    "text": "W którym roku odbyły się igrzyska olimpijskie w Sydney?",
+    "answer": 2000
+  },
+  {
+    "text": "W którym roku odbyły się igrzyska olimpijskie w Atenach?",
+    "answer": 2004
+  },
+  {
+    "text": "W którym roku odbyły się igrzyska olimpijskie w Pekinie?",
+    "answer": 2008
+  },
+  {
+    "text": "W którym roku odbyły się igrzyska olimpijskie w Londynie?",
+    "answer": 2012
+  },
+  {
+    "text": "W którym roku odbyły się igrzyska olimpijskie w Rio de Janeiro?",
+    "answer": 2016
+  },
+  {
+    "text": "W którym roku Polska i Ukraina współorganizowały Mistrzostwa Europy w piłce nożnej?",
+    "answer": 2012
+  },
+  {
+    "text": "W którym roku odbyły się pierwsze Mistrzostwa Europy w piłce nożnej?",
+    "answer": 1960
+  },
+  {
+    "text": "Ile planet liczy Układ Słoneczny?",
+    "answer": 8
+  },
+  {
+    "text": "Ile księżyców ma Mars?",
+    "answer": 2
+  },
+  {
+    "text": "Ile chromosomów ma komórka ciała człowieka?",
+    "answer": 46
+  },
+  {
+    "text": "Ile zębów ma dorosły człowiek z kompletnym uzębieniem?",
+    "answer": 32
+  },
+  {
+    "text": "Ile kości ma jedna stopa człowieka?",
+    "answer": 26
+  },
+  {
+    "text": "Ile kości ma jedna ręka człowieka (z nadgarstkiem)?",
+    "answer": 27
+  },
+  {
+    "text": "Ile żeber ma człowiek?",
+    "answer": 24
+  },
+  {
+    "text": "Ile kręgów ma kręgosłup człowieka (typowo)?",
+    "answer": 33
+  },
+  {
+    "text": "Ile litrów krwi ma dorosły człowiek (średnio)?",
+    "answer": 5
+  },
+  {
+    "text": "Ile procent masy ciała dorosłego człowieka stanowi woda (średnio)?",
+    "answer": 60
+  },
+  {
+    "text": "Ile procent powietrza stanowi azot?",
+    "answer": 78
+  },
+  {
+    "text": "Ile procent powietrza stanowi tlen?",
+    "answer": 21
+  },
+  {
+    "text": "Ile milionów lat ma Ziemia (w przybliżeniu)?",
+    "answer": 4540
+  },
+  {
+    "text": "Ile milionów lat temu wyginęły dinozaury nieptasie?",
+    "answer": 66
+  },
+  {
+    "text": "Ile milionów kilometrów dzieli Ziemię od Słońca (średnio, zaokrąglone do całości)?",
+    "answer": 150
+  },
+  {
+    "text": "Ile kilometrów średnicy ma Księżyc (zaokrąglone do całości)?",
+    "answer": 3474
+  },
+  {
+    "text": "Ile tysięcy kilometrów średnicy ma Słońce (zaokrąglone do całości)?",
+    "answer": 1391
+  },
+  {
+    "text": "Ile kilometrów na sekundę przebywa światło w próżni (zaokrąglone do całości)?",
+    "answer": 299792
+  },
+  {
+    "text": "Ile miliardów ludzi mieszka na Ziemi (stan z 2023 r., zaokrąglone)?",
+    "answer": 8
+  },
+  {
+    "text": "Jaką liczbę atomową ma węgiel?",
+    "answer": 6
+  },
+  {
+    "text": "Jaką liczbę atomową ma żelazo?",
+    "answer": 26
+  },
+  {
+    "text": "Jaką liczbę atomową ma srebro?",
+    "answer": 47
+  },
+  {
+    "text": "Jaką liczbę atomową ma uran?",
+    "answer": 92
+  },
+  {
+    "text": "Ile stopni w skali Mohsa ma diament?",
+    "answer": 10
+  },
+  {
+    "text": "Ile stopni liczy skala Beauforta?",
+    "answer": 12
+  },
+  {
+    "text": "Ile gramów ma uncja (zaokrąglone do całości)?",
+    "answer": 28
+  },
+  {
+    "text": "Ile centymetrów ma stopa angielska (zaokrąglone do całości)?",
+    "answer": 30
+  },
+  {
+    "text": "Ile metrów ma mila lądowa (zaokrąglone do całości)?",
+    "answer": 1609
+  },
+  {
+    "text": "Ile dni trwa ciąża u psa (średnio)?",
+    "answer": 63
+  },
+  {
+    "text": "Ile dni trwa ciąża u człowieka (40 tygodni)?",
+    "answer": 280
+  },
+  {
+    "text": "Ile miesięcy trwa ciąża u żyrafy (średnio)?",
+    "answer": 15
+  },
+  {
+    "text": "Z jaką maksymalną prędkością (km/h) nurkuje sokół wędrowny?",
+    "answer": 389
+  },
+  {
+    "text": "Z jaką maksymalną prędkością (km/h) biegnie struś?",
+    "answer": 70
+  },
+  {
+    "text": "Ile lat żyje rekin grenlandzki (szacunkowo, najstarsze osobniki)?",
+    "answer": 400
+  },
+  {
+    "text": "Ile nóg ma pająk?",
+    "answer": 8
+  },
+  {
+    "text": "Ile nóg ma owad?",
+    "answer": 6
+  },
+  {
+    "text": "Ile kilometrów długości ma Wielka Rafa Koralowa (zaokrąglone do setek)?",
+    "answer": 2300
+  },
+  {
+    "text": "Ile milionów kilometrów kwadratowych ma Sahara (zaokrąglone do całości)?",
+    "answer": 9
+  },
+  {
+    "text": "Ile milionów kilometrów kwadratowych ma Rosja (zaokrąglone do całości)?",
+    "answer": 17
+  },
+  {
+    "text": "Ile stref czasowych ma Rosja?",
+    "answer": 11
+  },
+  {
+    "text": "Ile jest kontynentów?",
+    "answer": 7
+  },
+  {
+    "text": "Ile metrów n.p.m. mają Rysy (najwyższy szczyt Polski)?",
+    "answer": 2499
+  },
+  {
+    "text": "Ile metrów n.p.m. ma Śnieżka?",
+    "answer": 1603
+  },
+  {
+    "text": "Ile kilometrów kwadratowych ma Śniardwy (zaokrąglone do całości)?",
+    "answer": 114
+  },
+  {
+    "text": "Ile kilometrów długości ma Wisła?",
+    "answer": 1047
+  },
+  {
+    "text": "Ile metrów wysokości ma K2?",
+    "answer": 8611
+  },
+  {
+    "text": "Ile metrów wysokości ma Kilimandżaro?",
+    "answer": 5895
+  },
+  {
+    "text": "Ile metrów wysokości ma Mont Blanc?",
+    "answer": 4806
+  },
+  {
+    "text": "Ile metrów wysokości ma Elbrus?",
+    "answer": 5642
+  },
+  {
+    "text": "Ile metrów głębokości ma jezioro Bajkał (maksymalnie)?",
+    "answer": 1642
+  },
+  {
+    "text": "Ile kilometrów długości ma Nil (w przybliżeniu, zaokrąglone do pięćdziesiątek)?",
+    "answer": 6650
+  },
+  {
+    "text": "Ile tysięcy kilometrów kwadratowych ma Polska (zaokrąglone do całości)?",
+    "answer": 313
+  },
+  {
+    "text": "Ile parków narodowych jest w Polsce?",
+    "answer": 23
+  },
+  {
+    "text": "Ile kilometrów ma polskie wybrzeże Bałtyku (w przybliżeniu)?",
+    "answer": 440
+  },
+  {
+    "text": "Ile metrów głębokości ma Morskie Oko (zaokrąglone do całości)?",
+    "answer": 51
+  },
+  {
+    "text": "Ile kilometrów długości ma Kanał Panamski (zaokrąglone do całości)?",
+    "answer": 82
+  },
+  {
+    "text": "Ile metrów wysokości ma Wieża Eiffla (z antenami)?",
+    "answer": 330
+  },
+  {
+    "text": "Ile metrów wysokości ma Burj Khalifa?",
+    "answer": 828
+  },
+  {
+    "text": "Ile metrów wysokości ma Pałac Kultury i Nauki (ze szpilem)?",
+    "answer": 237
+  },
+  {
+    "text": "Ile metrów wysokości ma wieża Big Bena (Elizabeth Tower, zaokrąglone do całości)?",
+    "answer": 96
+  },
+  {
+    "text": "Ile metrów wysokości miała pierwotnie Wielka Piramida w Gizie (zaokrąglone do całości)?",
+    "answer": 147
+  },
+  {
+    "text": "Ile państw sąsiaduje z Polską?",
+    "answer": 7
+  },
+  {
+    "text": "Ile jest województw w Polsce?",
+    "answer": 16
+  },
+  {
+    "text": "Ile jest powiatów w Polsce (razem z miastami na prawach powiatu)?",
+    "answer": 380
+  },
+  {
+    "text": "Ilu senatorów liczy polski Senat?",
+    "answer": 100
+  },
+  {
+    "text": "Ile państw należy do Unii Europejskiej?",
+    "answer": 27
+  },
+  {
+    "text": "Ile państw jest członkami ONZ?",
+    "answer": 193
+  },
+  {
+    "text": "Ile stanów mają Stany Zjednoczone?",
+    "answer": 50
+  },
+  {
+    "text": "Ilu zawodników liczy drużyna rugby union na boisku?",
+    "answer": 15
+  },
+  {
+    "text": "Ilu zawodników liczy drużyna baseballowa na boisku?",
+    "answer": 9
+  },
+  {
+    "text": "Ilu zawodników liczy drużyna piłki ręcznej na boisku (z bramkarzem)?",
+    "answer": 7
+  },
+  {
+    "text": "Ilu zawodników liczy drużyna koszykówki na boisku?",
+    "answer": 5
+  },
+  {
+    "text": "Ilu zawodników liczy drużyna siatkówki na boisku?",
+    "answer": 6
+  },
+  {
+    "text": "Na jakiej wysokości (w cm) wisi kosz w koszykówce?",
+    "answer": 305
+  },
+  {
+    "text": "Na jakiej wysokości (w cm) zawieszona jest siatka w siatkówce mężczyzn?",
+    "answer": 243
+  },
+  {
+    "text": "Ile centymetrów wynosi rekord świata w skoku wzwyż mężczyzn (Javier Sotomayor)?",
+    "answer": 245
+  },
+  {
+    "text": "Ile razy Rafael Nadal wygrał French Open?",
+    "answer": 14
+  },
+  {
+    "text": "Ile goli strzelił Robert Lewandowski w sezonie 2020/21 w Bundeslidze?",
+    "answer": 41
+  },
+  {
+    "text": "W ilu minutach Lewandowski strzelił pięć goli Wolfsburgowi w 2015 roku?",
+    "answer": 9
+  },
+  {
+    "text": "Ile razy Adam Małysz wygrał Kryształową Kulę za Puchar Świata?",
+    "answer": 4
+  },
+  {
+    "text": "Ile medali olimpijskich zdobył Michael Phelps?",
+    "answer": 28
+  },
+  {
+    "text": "Ile razy Michael Jordan zdobył mistrzostwo NBA?",
+    "answer": 6
+  },
+  {
+    "text": "Ile razy Lionel Messi zdobył Złotą Piłkę (stan na 2025 r.)?",
+    "answer": 8
+  },
+  {
+    "text": "Ile razy Brazylia wygrała Mistrzostwa Świata w piłce nożnej?",
+    "answer": 5
+  },
+  {
+    "text": "Ile metrów sześciennych wody mieści minimalny basen olimpijski (50×25×2 m)?",
+    "answer": 2500
+  },
+  {
+    "text": "Ile ksiąg liczy „Pan Tadeusz”?",
+    "answer": 12
+  },
+  {
+    "text": "Ile głównych części ma seria książek o Harrym Potterze?",
+    "answer": 7
+  },
+  {
+    "text": "Ile filmów o Harrym Potterze nakręcono?",
+    "answer": 8
+  },
+  {
+    "text": "Ile sezonów miał serial „Przyjaciele”?",
+    "answer": 10
+  },
+  {
+    "text": "Ile odcinków miał serial „Przyjaciele”?",
+    "answer": 236
+  },
+  {
+    "text": "Ile sezonów miała „Gra o tron”?",
+    "answer": 8
+  },
+  {
+    "text": "Ile odcinków miał serial „Breaking Bad”?",
+    "answer": 62
+  },
+  {
+    "text": "Ile odcinków miała amerykańska wersja serialu „The Office”?",
+    "answer": 201
+  },
+  {
+    "text": "Ile symfonii skomponował Beethoven?",
+    "answer": 9
+  },
+  {
+    "text": "Ile strun ma standardowa gitara?",
+    "answer": 6
+  },
+  {
+    "text": "Ile strun ma skrzypce?",
+    "answer": 4
+  },
+  {
+    "text": "Ile białych klawiszy ma jedna oktawa na pianinie?",
+    "answer": 7
+  },
+  {
+    "text": "Ile pól ma szachownica?",
+    "answer": 64
+  },
+  {
+    "text": "Ile figur i pionów jest na początku partii szachów (obie strony razem)?",
+    "answer": 32
+  },
+  {
+    "text": "Ile kart jest w standardowej talii (bez jokerów)?",
+    "answer": 52
+  },
+  {
+    "text": "Ile pól ma plansza do Monopoly?",
+    "answer": 40
+  },
+  {
+    "text": "Ile kolorowych naklejek jest na całej kostce Rubika 3×3?",
+    "answer": 54
+  },
+  {
+    "text": "Ile oczek jest łącznie na wszystkich ściankach zwykłej kostki do gry?",
+    "answer": 21
+  },
+  {
+    "text": "Ile liter ma polski alfabet?",
+    "answer": 32
+  },
+  {
+    "text": "Ile godzin ma tydzień?",
+    "answer": 168
+  },
+  {
+    "text": "Ile sekund ma doba?",
+    "answer": 86400
+  },
+  {
+    "text": "Ile zer ma milion?",
+    "answer": 6
+  },
+  {
+    "text": "Ile zer ma miliard (w polskim systemie)?",
+    "answer": 9
+  },
+  {
+    "text": "Ile zer ma bilion (w polskim systemie)?",
+    "answer": 12
+  },
+  {
+    "text": "Ile lat trwa kadencja prezydenta RP?",
+    "answer": 5
+  },
+  {
+    "text": "Ile lat trwa kadencja posła na Sejm?",
+    "answer": 4
+  },
+  {
+    "text": "Ile gwiazd ma flaga USA?",
+    "answer": 50
+  },
+  {
+    "text": "Ile gramów cukru jest w puszce Coca-Coli 330 ml?",
+    "answer": 35
+  },
+  {
+    "text": "Ile minut trwa mecz piłki nożnej (czas regulaminowy)?",
+    "answer": 90
   }
 ]

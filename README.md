@@ -48,6 +48,8 @@ Ekran hosta działa tylko z komputera z serwerem (localhost albo jego własny ad
 | `writerBonus` | 300 | bonus autora zwycięskiej odpowiedzi |
 | `serverPort` | 3000 | port serwera |
 
+Pytania są losowane bez powtórzeń: serwer pamięta zadane pytania do restartu i losuje z jeszcze niewykorzystanych. Gdy baza się wyczerpie, zaczyna od nowa.
+
 `data/questions.json` to lista pytań w formacie `{ "text": "…", "answer": 1912 }`, gdzie `answer` jest liczbą całkowitą. Wadliwe i zduplikowane pytania są pomijane przy starcie.
 
 ## Struktura projektu

@@ -32,6 +32,9 @@ if (allQuestions.length !== rawQuestions.length) {
     console.warn(`Pominięto ${rawQuestions.length - allQuestions.length} wadliwych lub zduplikowanych pytań.`);
 }
 
+// Pytania zadane od uruchomienia serwera: kolejne gry losują z jeszcze niewykorzystanych.
+const usedQuestions = new Set();
+
 const PLAYER_COLORS = [
     '#FF0000', '#0066FF', '#00CC00', '#FFD700', '#9900CC',
     '#FF8C00', '#00E5EE', '#FF1493', '#7FFF00', '#008080',
@@ -251,8 +254,7 @@ io.on('connection', (socket) => {
         if (!Object.values(players).some(p => p.connected)) return socket.emit('host_error', 'Brak podłączonych graczy.');
         clearTimers();
         Object.values(players).forEach(p => { p.money = 0; });
-        const deck = logic.shuffleArray([...allQuestions]);
-        activeQuestions = deck.slice(0, Math.min(cfg.maxRounds || deck.length, deck.length));
+        activeQuestions = logic.pickQuestions(allQuestions, usedQuestions, cfg.maxRounds);
         qIndex = 0;
         toHosts('update_player_list', publicList());
         runPhaseQuestion();
@@ -299,6 +301,7 @@ function runPhaseQuestion() {
     rawAnswers = []; uniqueCards = []; currentBets = {}; lastResult = null; earlyEnding = false;
     const q = activeQuestions[qIndex];
     currentQuestionText = q.text;
+    usedQuestions.add(logic.questionKey(q));
     io.emit('new_question', { text: q.text, time: cfg.roundTime, total: cfg.roundTime });
     startTimer(cfg.roundTime, runPhaseShowAnswers);
 }

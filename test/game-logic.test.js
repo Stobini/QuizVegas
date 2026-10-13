@@ -40,3 +40,25 @@ test('parseAnswer przyjmuje tylko liczby całkowite', () => {
   assert.strictEqual(L.parseAnswer('1912'), 1912);
   ['', 'abc', '3.5', '1e5', '9999999999999'].forEach(v => assert.strictEqual(L.parseAnswer(v), null));
 });
+
+test('pickQuestions: kolejne gry nie powtarzają pytań, dopóki są nieużyte', () => {
+  const all = Array.from({ length: 20 }, (_, i) => ({ text: 'Q' + i, answer: i }));
+  const used = new Set();
+  const seen = new Set();
+  for (let g = 0; g < 2; g++) {
+    const picked = L.pickQuestions(all, used, 10);
+    assert.strictEqual(picked.length, 10);
+    assert.strictEqual(new Set(picked.map(L.questionKey)).size, 10);
+    picked.forEach(q => { assert.ok(!seen.has(q.text)); seen.add(q.text); used.add(L.questionKey(q)); });
+  }
+  assert.strictEqual(seen.size, 20);
+});
+test('pickQuestions: gdy nieużytych jest za mało, dolosowuje i zeruje historię', () => {
+  const all = Array.from({ length: 12 }, (_, i) => ({ text: 'Q' + i, answer: i }));
+  const used = new Set(all.slice(0, 8).map(L.questionKey)); // zostały 4 nieużyte
+  const picked = L.pickQuestions(all, used, 10);
+  assert.strictEqual(picked.length, 10);
+  assert.strictEqual(new Set(picked.map(L.questionKey)).size, 10);
+  ['Q8', 'Q9', 'Q10', 'Q11'].forEach(t => assert.ok(picked.some(q => q.text === t)));
+  assert.strictEqual(used.size, 0);
+});

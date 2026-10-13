@@ -10,6 +10,21 @@ function shuffleArray(array) {
     return array;
 }
 
+const questionKey = q => q.text.trim().toLowerCase();
+
+// Losuje `count` pytań, najpierw spośród jeszcze nieużytych (zbiór `used`).
+// Gdy nieużytych jest za mało, bierze wszystkie pozostałe, zeruje historię
+// i dolosowuje resztę z całej bazy (bez powtórzeń w obrębie jednej gry).
+function pickQuestions(all, used, count) {
+    const limit = Math.min(count || all.length, all.length);
+    const fresh = shuffleArray(all.filter(q => !used.has(questionKey(q))));
+    if (fresh.length >= limit) return fresh.slice(0, limit);
+    used.clear();
+    const taken = new Set(fresh.map(questionKey));
+    const rest = shuffleArray(all.filter(q => !taken.has(questionKey(q))));
+    return fresh.concat(rest.slice(0, limit - fresh.length));
+}
+
 // Odrzuca wadliwe wpisy i duplikaty tekstu pytania.
 function cleanQuestions(list) {
     if (!Array.isArray(list)) return [];
@@ -123,6 +138,6 @@ function settleRound({ cards, bets, correct, writerBonus }) {
 }
 
 module.exports = {
-    SMALLER_THAN_LOWEST_ID, shuffleArray, cleanQuestions, parseAnswer,
+    SMALLER_THAN_LOWEST_ID, shuffleArray, cleanQuestions, parseAnswer, questionKey, pickQuestions,
     buildCards, findWinner, validateBets, settleRound
 };
