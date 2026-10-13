@@ -33,7 +33,7 @@ Ekran główny: http://localhost:3000/host.html
 
 Ekrany graczy: Wejdź na telefonie z tej samej sieci Wi-Fi pod adres IP swojego komputera (np. http://192.168.0.10:3000).
 
-##Konfiguracja
+# Konfiguracja
 
 Baza pytań oraz ustawienia czasów i limitów rund znajdują się w folderze data/ (questions.json i config.json). Projekt zawiera już pulę około 200 przykładowych pytań.
 
