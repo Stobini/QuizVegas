@@ -1,0 +1,13 @@
+{
+  "roundTime": 30,
+  "bettingTime": 15,
+  "resultTime": 10,
+  "revealDelay": 2500,
+  "serverPort": 3000,
+  "maxRounds": 10,
+  "maxPlayers": 15,
+  "maxNickLength": 16,
+  "baseChipValue": 100,
+  "permChips": 2,
+  "writerBonus": 300
+}

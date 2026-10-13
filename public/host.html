@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>QuizVegas - TV</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap">
+    <style>
+        :root { --bg:#0b0716; --pn:#1a1030; --cd:#140c26; --ac:#ff3ea5; --a2:#35e0ff; --tx:#f6f0ff; --mu:#b5a8d6; --glow:0 0 16px rgba(53,224,255,.45); }
+        * { box-sizing: border-box; }
+        body { font-family: 'Space Grotesk', 'Segoe UI', sans-serif; background: var(--bg); color: var(--tx); margin: 0; height: 100vh; overflow: hidden; display: grid; grid-template-columns: 1fr clamp(250px, 17vw, 340px); }
+
+        #game-area { position: relative; display: flex; flex-direction: column; border-right: 2px solid var(--a2); min-width: 0; }
+        #top-bar { padding: 12px 24px; background: var(--pn); display: flex; align-items: center; gap: 24px; min-height: 120px; }
+        .qwrap { flex: 1; min-width: 0; }
+        #phase-info { color: var(--a2); letter-spacing: .18em; font-weight: 700; font-size: clamp(.9rem, 1.1vw, 1.3rem); }
+        #question-text { font-size: clamp(1.5rem, 2.6vw, 3rem); font-weight: 700; line-height: 1.15; margin-top: 4px; }
+        #center-stage { display: flex; align-items: center; }
+        #timer { width: 92px; height: 92px; border-radius: 50%; background: var(--ac); color: var(--bg); display: flex; justify-content: center; align-items: center; font-size: 2.8em; font-weight: 700; box-shadow: 0 0 18px var(--ac); }
+        #answer-display { display: none; padding: 8px 28px; background: var(--bg); color: var(--ac); font-size: clamp(2rem, 3.6vw, 4rem); font-weight: 700; border-radius: 12px; border: 3px solid var(--ac); box-shadow: 0 0 20px var(--ac); }
+        #answer-display.suspense { animation: pulse .35s infinite alternate; }
+
+        #tbar { height: 10px; background: rgba(255,255,255,.12); }
+        .tfill { height: 100%; width: 100%; background: var(--a2); transition: width 1s linear; }
+        .tfill.danger { background: var(--ac); animation: pulse .5s infinite alternate; }
+
+        #stage { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 10px 28px; min-height: 0; }
+        #board { position: relative; display: flex; gap: clamp(6px, .8vw, 14px); justify-content: center; align-items: flex-end; min-height: 280px; }
+        #axis-wrap { position: relative; height: 150px; }
+        #axis-svg { position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: visible; }
+
+        /* KARTY */
+        .card { flex: 1 1 0; min-width: 54px; max-width: 150px; height: clamp(190px, 33vh, 270px); background: var(--cd); color: var(--tx); border: 2px solid var(--a2); border-radius: 10px; box-shadow: var(--glow); display: flex; flex-direction: column; align-items: center; position: relative; margin-top: 24px; animation: flipIn .5s both; transition: opacity .4s, transform .4s; }
+        .card-header { width: 100%; height: 20px; border-radius: 8px 8px 0 0; }
+        .card-val { font-size: clamp(1.1rem, 2vw, 2.4rem); font-weight: 700; margin-top: 14px; }
+        .card-owner { font-size: clamp(.75rem, 1.05vw, 1.15rem); margin-top: 6px; color: var(--mu); display: flex; flex-wrap: wrap; justify-content: center; gap: 2px 6px; padding: 0 4px; }
+        .card-owner span { display: inline-flex; align-items: center; gap: 4px; }
+        .odds-badge { position: absolute; top: -17px; background: var(--ac); color: var(--bg); padding: 2px 12px; border-radius: 99px; font-weight: 700; font-size: clamp(.9rem, 1.2vw, 1.4rem); z-index: 20; }
+        .odds-x2 { background: #fff; transform: scale(1.1); }
+        .hidden-card { justify-content: center; gap: 8px; border-top: 10px solid var(--a2); animation: flipIn .4s both; background: repeating-linear-gradient(45deg, #1a1030 0 8px, #241845 8px 16px); }
+        .hidden-card .q { font-size: clamp(1.8rem, 3vw, 3.4rem); font-weight: 700; }
+        .winner-card { transform: scale(1.1); border-color: #fff; box-shadow: 0 0 0 3px var(--ac), 0 0 40px var(--ac); z-index: 10; }
+        .dimmed { opacity: .4; }
+
+        .player-chips-container { position: absolute; bottom: 6px; left: 0; width: 100%; display: flex; justify-content: space-around; align-items: flex-end; flex-wrap: wrap; pointer-events: none; z-index: 5; padding: 0 2px; }
+        .chip-stack-wrapper { --cs: clamp(24px, 2vw, 38px); display: flex; flex-direction: column-reverse; align-items: center; filter: drop-shadow(0 4px 3px rgba(0,0,0,.6)); margin: 0 -2px; }
+        .live-chip { position: relative; width: var(--cs); height: var(--cs); border-radius: 50%; border: 2px solid #fff; display: flex; justify-content: center; align-items: center; font-weight: 700; font-size: clamp(.55rem, .75vw, .85rem); margin-top: calc(var(--cs) * -.8); animation: chipDrop .3s ease-out; }
+        .live-chip .shape { position: absolute; top: 2px; left: 50%; transform: translateX(-50%); }
+        .perm-style { color: #fff; text-shadow: 0 1px 1px #000; }
+        .cash-style { background: #fff; color: #0b0716; }
+        .live-chip.to-wallet { animation: toWallet 1.3s ease-in forwards; z-index: 50; }
+        .live-chip.lose { animation: loseChip 1s ease-in forwards; }
+
+        /* SIDEBAR */
+        #sidebar { background: var(--pn); display: flex; flex-direction: column; padding: 12px; min-height: 0; }
+        #sidebar h2 { color: var(--a2); text-align: center; margin: 0; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,.2); letter-spacing: .12em; }
+        #ranking-list { overflow-y: auto; flex: 1; }
+        .rank-row { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 10px 6px; border-bottom: 1px solid rgba(255,255,255,.12); font-size: clamp(1rem, 1.3vw, 1.5rem); font-weight: 700; position: relative; }
+        .rank-row .nm { display: flex; align-items: center; gap: 8px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .money-val { color: var(--a2); font-variant-numeric: tabular-nums; }
+        .win-badge { position: absolute; right: 4px; top: -9px; padding: 2px 9px; border-radius: 10px; font-size: .75em; font-weight: 700; animation: popIn .5s; z-index: 100; }
+        #snd { margin-top: 8px; background: transparent; color: var(--mu); border: 1px solid var(--mu); border-radius: 8px; padding: 10px; font: inherit; cursor: pointer; min-height: 44px; }
+
+        /* OVERLAYE */
+        #lobby-overlay { position: absolute; inset: 0; background: var(--bg); z-index: 50; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; }
+        .lobby-pill { padding: 8px 20px; border-radius: 20px; color: #fff; font-weight: 700; font-size: 1.2em; text-shadow: 0 1px 2px rgba(0,0,0,.6); animation: popIn .3s; margin: 5px; display: inline-flex; align-items: center; gap: 8px; }
+        .lobby-pill.offline { opacity: .35; }
+        #transition-overlay { position: absolute; inset: 0; background: rgba(11,7,22,.92); z-index: 55; display: none; flex-direction: column; justify-content: center; align-items: center; }
+        #transition-count { font-size: 8em; font-weight: 700; color: var(--ac); }
+        #final-overlay { position: absolute; inset: 0; background: rgba(11,7,22,.95); z-index: 60; display: none; flex-direction: column; justify-content: center; align-items: center; gap: 14px; }
+        .final-row { font-size: 2em; font-weight: 700; display: flex; gap: 20px; min-width: 460px; justify-content: space-between; align-items: center; }
+        .final-row.first { font-size: 3em; color: var(--ac); }
+
+        @keyframes flipIn { from { transform: rotateY(90deg); opacity: 0; } to { transform: rotateY(0); opacity: 1; } }
+        @keyframes chipDrop { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        @keyframes popIn { from { transform: scale(0) translateY(20px); opacity: 0; } to { transform: scale(1) translateY(0); opacity: 1; } }
+        @keyframes pulse { from { transform: scale(1); } to { transform: scale(1.08); } }
+        @keyframes toWallet { to { transform: translate(55vw, -14vh) scale(.4); opacity: 0; } }
+        @keyframes loseChip { to { transform: translateY(140px) rotate(70deg); opacity: 0; } }
+    </style>
+</head>
+<body>
+    <div id="game-area">
+        <div id="top-bar">
+            <div class="qwrap"><div id="phase-info">LOBBY</div><div id="question-text">Oczekiwanie na graczy...</div></div>
+            <div id="center-stage"><div id="timer">--</div><div id="answer-display">?</div></div>
+        </div>
+        <div id="tbar"><div id="tfill" class="tfill"></div></div>
+        <div id="stage">
+            <div id="board"></div>
+            <div id="axis-wrap"><svg id="axis-svg" aria-hidden="true"></svg></div>
+        </div>
+        <div id="lobby-overlay">
+            <h1 style="color:var(--ac); font-size: 4em; margin: 0 0 10px">QUIZVEGAS</h1>
+            <h2 style="color:var(--mu); margin-bottom:5px">Wejdź w przeglądarce telefonu na:</h2>
+            <div id="lobby-addr" style="font-size:2em; font-weight:700; color:var(--a2); margin-bottom:10px; text-align:center">...</div>
+            <img id="lobby-qr" alt="Kod QR" style="display:none; width:180px; height:180px; background:white; padding:8px; border-radius:8px; margin-bottom:15px">
+            <div id="players-container" style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-bottom:20px; max-width: 90%;"></div>
+            <div id="lobby-msg" style="color:var(--ac); min-height:1.4em; margin-bottom:8px"></div>
+            <button onclick="startGame()" style="padding: 20px 40px; font: inherit; font-size: 1.5em; font-weight: 700; background: var(--ac); color: var(--bg); border: none; border-radius: 10px; cursor: pointer; box-shadow: 0 0 20px var(--ac)">START GRY</button>
+        </div>
+        <div id="final-overlay"></div>
+        <div id="transition-overlay"><div style="font-size:2em">Następne pytanie za</div><div id="transition-count">3</div></div>
+    </div>
+    <div id="sidebar">
+        <h2>PORTFEL</h2>
+        <div id="ranking-list"></div>
+        <button id="snd" onclick="toggleSound()">Dźwięk: wł.</button>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+        const SENT = -9007199254740991; // karta "mniej niż najniższa"
+        let playersData = {};
+        let totalTime = 30;
+        const $ = id => document.getElementById(id);
+        const ui = {
+            lobby: $('lobby-overlay'), board: $('board'), qText: $('question-text'), timer: $('timer'),
+            ansDisp: $('answer-display'), rankList: $('ranking-list'), transOver: $('transition-overlay'),
+            phaseInfo: $('phase-info'), final: $('final-overlay'), lobbyPlayers: $('players-container'),
+            addr: $('lobby-addr'), qr: $('lobby-qr'), lobbyMsg: $('lobby-msg'), fill: $('tfill'),
+            axisSvg: $('axis-svg'), axisWrap: $('axis-wrap')
+        };
+        // Tekst od graczy trafia do DOM przez textContent, więc nick nie wykona kodu.
+        function el(tag, cls, text) { const e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; }
+
+        // ---------- KSZTAŁT GRACZA ----------
+        const SHAPES = {
+            circle: 'border-radius:50%', square: '',
+            triangle: 'clip-path:polygon(50% 0,100% 100%,0 100%)',
+            diamond: 'clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)',
+            hexagon: 'clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%)'
+        };
+        function shapeIcon(shape, color, px) {
+            const s = el('span', 'shape');
+            s.style.cssText = `display:inline-block;flex-shrink:0;width:${px}px;height:${px}px;background:${color};${SHAPES[shape] || SHAPES.circle}`;
+            s.setAttribute('aria-hidden', 'true');
+            return s;
+        }
+
+        // ---------- DŹWIĘKI (WebAudio, bez plików) ----------
+        let actx = null, soundOn = true;
+        function unlockAudio() {
+            if (!actx) { const AC = window.AudioContext || window.webkitAudioContext; if (AC) actx = new AC(); }
+            if (actx && actx.state === 'suspended') actx.resume();
+        }
+        document.addEventListener('click', unlockAudio);
+        function toggleSound() { soundOn = !soundOn; $('snd').textContent = 'Dźwięk: ' + (soundOn ? 'wł.' : 'wył.'); unlockAudio(); }
+        function beep(freq, dur, type = 'sine', vol = 0.08, when = 0) {
+            if (!actx || !soundOn) return;
+            const o = actx.createOscillator(), g = actx.createGain(), t = actx.currentTime + when;
+            o.type = type; o.frequency.value = freq; o.connect(g); g.connect(actx.destination);
+            g.gain.setValueAtTime(vol, t); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+            o.start(t); o.stop(t + dur);
+        }
+        let lastClick = 0;
+        function chipSound() { const n = Date.now(); if (n - lastClick > 60) { lastClick = n; beep(900, 0.05, 'triangle', 0.05); } }
+        function drumroll(ms) { let n = 0; const iv = setInterval(() => beep(200 + n++ * 16, 0.07, 'square', 0.04), 90); setTimeout(() => clearInterval(iv), Math.max(0, ms - 100)); }
+        function fanfare() { [523, 659, 784, 1047].forEach((f, i) => beep(f, 0.25, 'triangle', 0.09, i * 0.12)); }
+        function sadTone() { beep(220, 0.3, 'sawtooth', 0.06); beep(165, 0.5, 'sawtooth', 0.06, 0.25); }
+
+        // ---------- PASEK CZASU ----------
+        function updateBar(t) { ui.fill.style.width = Math.max(0, t / totalTime * 100) + '%'; ui.fill.classList.toggle('danger', t <= 5 && t > 0); }
+
+        // ---------- OŚ LICZBOWA ----------
+        let axis = { answers: null, truth: null };
+        function drawAxis() {
+            const svg = ui.axisSvg; svg.innerHTML = '';
+            if (!axis.answers || axis.answers.length === 0) return;
+            const W = ui.axisWrap.clientWidth, Y = 78, pad = 44, ns = 'http://www.w3.org/2000/svg';
+            const mk = (tag, attrs, style) => { const e = document.createElementNS(ns, tag); Object.entries(attrs).forEach(([k, v]) => e.setAttribute(k, v)); if (style) Object.assign(e.style, style); return e; };
+            const nums = axis.answers.filter(a => a.val !== SENT).map(a => a.val);
+            const min = Math.min(...nums), max = Math.max(...nums);
+            const xFor = v => v === SENT ? 14 : (max === min ? W / 2 : pad + (v - min) / (max - min) * (W - 2 * pad));
+            svg.appendChild(mk('line', { x1: 0, y1: Y, x2: W, y2: Y, 'stroke-width': 4 }, { stroke: 'var(--a2)' }));
+            axis.answers.forEach(a => {
+                const card = document.getElementById('card-val-' + a.val); if (!card) return;
+                const cx = card.offsetLeft + card.offsetWidth / 2, x = xFor(a.val);
+                svg.appendChild(mk('line', { x1: cx, y1: 0, x2: x, y2: Y, 'stroke-width': 2 }, { stroke: 'var(--mu)', opacity: 0.7 }));
+                const col = a.authors && a.authors.length === 1 ? a.authors[0].color : '#ffffff';
+                svg.appendChild(mk('circle', { cx: x, cy: Y, r: 9, 'stroke-width': 2 }, { fill: col, stroke: '#fff' }));
+            });
+            if (axis.truth !== null) {
+                const t = axis.truth; let x, label = String(t);
+                if (t < min) { x = pad - 22; label = '◄ ' + t; } else if (t > max) { x = W - pad + 22; label = t + ' ►'; } else x = xFor(t);
+                svg.appendChild(mk('line', { x1: x, y1: Y - 34, x2: x, y2: Y + 34, 'stroke-width': 5 }, { stroke: 'var(--ac)' }));
+                const tx = mk('text', { x: Math.min(Math.max(x, 90), W - 90), y: Y + 68, 'text-anchor': 'middle', 'font-size': 26, 'font-weight': 700 }, { fill: 'var(--ac)' });
+                tx.textContent = 'PRAWDA: ' + label; svg.appendChild(tx);
+            }
+        }
+        window.addEventListener('resize', drawAxis);
+
+        // ---------- POŁĄCZENIE ----------
+        socket.on('connect', () => socket.emit('host_join'));
+        socket.on('host_denied', () => { ui.qText.textContent = 'Ten ekran działa tylko na komputerze z serwerem (http://localhost:3000/host.html).'; });
+        socket.on('host_error', (m) => { ui.lobbyMsg.textContent = m; });
+
+        fetch('/info').then(r => r.json()).then(info => {
+            ui.addr.textContent = info.urls.length ? info.urls.join('   ') : 'Brak połączenia z siecią Wi-Fi';
+            if (info.qr) { ui.qr.src = info.qr; ui.qr.style.display = 'block'; }
+        }).catch(() => {});
+
+        function renderLobby(players) {
+            ui.lobbyPlayers.innerHTML = '';
+            players.forEach(p => {
+                const pill = el('div', 'lobby-pill' + (p.connected ? '' : ' offline'));
+                pill.style.background = p.color;
+                pill.append(shapeIcon(p.shape, '#fff', 16), document.createTextNode(p.nick));
+                ui.lobbyPlayers.appendChild(pill);
+            });
+        }
+
+        socket.on('state_sync', (d) => { ui.lobby.style.display = d.phase === 'IDLE' ? 'flex' : 'none'; ui.final.style.display = 'none'; });
+
+        socket.on('update_player_list', (players) => {
+            playersData = {};
+            players.forEach(p => playersData[p.id] = p);
+            if (ui.lobby.style.display !== 'none') renderLobby(players);
+            if (ui.transOver.style.display === 'none') renderRanking(players.slice());
+        });
+
+        socket.on('lobby_reset', () => {
+            playersData = {}; axis = { answers: null, truth: null }; drawAxis();
+            ui.final.style.display = 'none'; ui.lobby.style.display = 'flex';
+            ui.board.innerHTML = ''; ui.rankList.innerHTML = ''; ui.lobbyMsg.textContent = '';
+            ui.qText.textContent = 'Oczekiwanie na graczy...'; ui.phaseInfo.textContent = 'LOBBY';
+            ui.ansDisp.style.display = 'none'; ui.timer.style.display = 'flex'; ui.timer.textContent = '--';
+            renderLobby([]);
+        });
+
+        // ---------- RANKING ----------
+        function createRankRow(p, index, winAmount = 0) {
+            const row = el('div', 'rank-row');
+            if (p.connected === false) row.style.opacity = 0.5;
+            const name = el('span', 'nm'); name.style.color = p.color;
+            name.append(shapeIcon(p.shape, p.color, 22), document.createTextNode((index === 0 ? '👑 ' : '') + p.nick));
+            row.append(name, el('div', 'money-val', '$' + p.money));
+            if (winAmount !== 0) {
+                const badge = el('div', 'win-badge', (winAmount > 0 ? '▲ +$' : '▼ −$') + Math.abs(winAmount));
+                badge.style.background = winAmount > 0 ? '#fff' : 'var(--ac)';
+                badge.style.color = '#0b0716';
+                row.appendChild(badge);
+            }
+            return row;
+        }
+        function renderRanking(players) {
+            ui.rankList.innerHTML = '';
+            players.sort((a, b) => b.money - a.money).forEach((p, i) => ui.rankList.appendChild(createRankRow(p, i, 0)));
+        }
+
+        // ---------- ŻETONY NA KARTACH ----------
+        function renderLiveBets(data) {
+            document.querySelectorAll(`.stack-owner-${data.playerId}`).forEach(e => e.remove());
+            const pl = playersData[data.playerId] || {};
+            const betsPerCard = {};
+            data.bets.forEach(chip => { (betsPerCard[chip.targetVal] = betsPerCard[chip.targetVal] || []).push(chip); });
+            Object.keys(betsPerCard).forEach(val => {
+                const card = document.getElementById(`card-val-${val}`);
+                if (!card) return;
+                let container = card.querySelector('.player-chips-container');
+                if (!container) { container = el('div', 'player-chips-container'); card.appendChild(container); }
+                const wrapper = el('div', `chip-stack-wrapper stack-owner-${data.playerId}`);
+                betsPerCard[val].forEach(chip => {
+                    const c = el('div', 'live-chip ' + (chip.type === 'PERM' ? 'perm-style' : 'cash-style'), chip.display);
+                    c.dataset.target = chip.targetVal; c.dataset.type = chip.type;
+                    if (chip.type === 'PERM') c.style.background = data.color;
+                    c.appendChild(shapeIcon(pl.shape, chip.type === 'PERM' ? '#fff' : data.color, 9));
+                    wrapper.appendChild(c);
+                });
+                container.appendChild(wrapper);
+            });
+            chipSound();
+        }
+        socket.on('host_update_bet_live', renderLiveBets);
+
+        // ---------- WYNIK RUNDY ----------
+        socket.on('show_round_result', (data) => {
+            ui.timer.style.display = 'none'; ui.ansDisp.style.display = 'block'; ui.ansDisp.textContent = '?'; ui.ansDisp.classList.add('suspense');
+            ui.phaseInfo.textContent = 'WYNIK RUNDY';
+            const delay = data.revealDelay || 2500;
+            drumroll(delay);
+
+            if (data.bets) {
+                document.querySelectorAll('.chip-stack-wrapper').forEach(e => e.remove());
+                Object.keys(data.bets).forEach(pid => {
+                    const pData = playersData[pid];
+                    if (pData && data.bets[pid]) renderLiveBets({ playerId: pid, color: pData.color, bets: data.bets[pid] });
+                });
+            }
+
+            setTimeout(() => {
+                ui.ansDisp.classList.remove('suspense'); ui.ansDisp.textContent = data.correct;
+                axis.truth = data.correct; drawAxis();
+                document.querySelectorAll('.card').forEach(c => c.classList.add('dimmed'));
+                if (data.winningValue !== null) {
+                    document.querySelectorAll(`#card-val-${data.winningValue}`).forEach(c => { c.classList.remove('dimmed'); c.classList.add('winner-card'); });
+                    fanfare();
+                } else sadTone();
+                document.querySelectorAll('.live-chip').forEach(c => {
+                    if (data.winningValue !== null && Number(c.dataset.target) === data.winningValue) c.classList.add('to-wallet');
+                    else if (c.dataset.type === 'CASH') c.classList.add('lose');
+                });
+
+                if (Object.keys(playersData).length === 0) {
+                    data.players.forEach(p => playersData[p.id] = p);
+                    renderRanking(data.players.slice());
+                } else {
+                    ui.rankList.innerHTML = '';
+                    Object.values(playersData).sort((a, b) => b.money - a.money).forEach((oldP, i) => {
+                        const newP = data.players.find(p => p.id === oldP.id);
+                        if (newP) { ui.rankList.appendChild(createRankRow(newP, i, newP.money - oldP.money)); playersData[newP.id] = newP; }
+                    });
+                    setTimeout(() => renderRanking(data.players.slice()), 4000);
+                }
+            }, delay);
+        });
+
+        // ---------- PYTANIE I KARTY ----------
+        function startGame() { unlockAudio(); ui.lobbyMsg.textContent = ''; socket.emit('host_start_game'); }
+
+        socket.on('new_question', (data) => {
+            ui.lobby.style.display = 'none'; ui.final.style.display = 'none'; ui.transOver.style.display = 'none';
+            ui.qText.textContent = data.text; ui.board.innerHTML = ''; axis = { answers: null, truth: null }; drawAxis();
+            ui.ansDisp.style.display = 'none'; ui.ansDisp.classList.remove('suspense');
+            ui.timer.style.display = 'flex'; ui.timer.textContent = data.time; ui.timer.style.background = 'var(--ac)';
+            ui.phaseInfo.textContent = 'PISANIE...';
+            totalTime = data.total || data.time; updateBar(data.time);
+        });
+        socket.on('timer_tick', (t) => { ui.timer.textContent = t; updateBar(t); if (t <= 5 && t > 0) beep(820, 0.08, 'square', 0.05); });
+
+        socket.on('player_answered_event', (p) => {
+            const c = el('div', 'card hidden-card');
+            c.style.borderTopColor = p.color;
+            c.append(shapeIcon(p.shape, p.color, 40), el('div', 'q', '?'));
+            ui.board.appendChild(c); beep(500, 0.06, 'triangle', 0.05);
+        });
+
+        socket.on('display_sorted_answers', (answers) => {
+            ui.board.innerHTML = ''; ui.phaseInfo.textContent = 'ODSŁANIANIE...';
+            answers.forEach((a, i) => {
+                const c = el('div', 'card'); c.id = `card-val-${a.val}`; c.style.animationDelay = (i * 0.35) + 's';
+                const head = el('div', 'card-header'); head.style.background = a.bgStyle || '#555';
+                const owners = el('div', 'card-owner');
+                if (a.authors && a.authors.length) {
+                    a.authors.forEach(au => { const s = el('span'); s.append(shapeIcon(au.shape, au.color, 12), document.createTextNode(au.nick)); owners.appendChild(s); });
+                } else owners.textContent = 'BANK';
+                c.append(el('div', a.odds === 2 ? 'odds-badge odds-x2' : 'odds-badge', 'x' + a.odds), head,
+                    el('div', 'card-val', String(a.displayVal || a.val)), owners, el('div', 'player-chips-container'));
+                ui.board.appendChild(c);
+                setTimeout(() => beep(420 + i * 45, 0.09, 'triangle', 0.06), i * 350);
+            });
+            axis = { answers, truth: null };
+            requestAnimationFrame(drawAxis);
+        });
+
+        socket.on('start_betting_phase', (data) => {
+            ui.timer.textContent = data.time; ui.timer.style.background = 'var(--a2)'; ui.phaseInfo.textContent = 'OBSTAWIANIE...';
+            totalTime = data.total || data.time; updateBar(data.time); beep(660, 0.15, 'triangle', 0.07);
+        });
+        socket.on('prepare_next_question', (s) => { ui.transOver.style.display = 'flex'; $('transition-count').textContent = s; });
+
+        socket.on('game_finished', (players) => {
+            renderRanking(players.slice());
+            ui.transOver.style.display = 'none';
+            ui.final.innerHTML = '';
+            const h = el('h1', '', 'KONIEC GRY'); h.style.cssText = 'color:var(--ac); font-size:4em; margin:0 0 10px';
+            ui.final.appendChild(h);
+            players.slice(0, 3).forEach((p, i) => {
+                const row = el('div', 'final-row' + (i === 0 ? ' first' : ''));
+                const name = el('span'); name.style.cssText = 'display:inline-flex; align-items:center; gap:12px';
+                name.append(shapeIcon(p.shape, p.color, i === 0 ? 40 : 28), document.createTextNode(`${i + 1}. ${p.nick}`));
+                row.append(name, el('span', '', '$' + p.money));
+                ui.final.appendChild(row);
+            });
+            const btn = el('button', '', 'ZAGRAJ PONOWNIE');
+            btn.style.cssText = 'margin-top:30px; padding:20px 40px; font:inherit; font-size:1.5em; font-weight:700; background:var(--ac); color:var(--bg); border:none; border-radius:10px; cursor:pointer';
+            btn.onclick = () => socket.emit('host_new_game');
+            ui.final.appendChild(btn);
+            ui.final.style.display = 'flex'; fanfare();
+        });
+    </script>
+</body>
+</html>
